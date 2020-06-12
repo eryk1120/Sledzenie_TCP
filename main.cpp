@@ -11,9 +11,9 @@ int main()
 
     //Tworzenie zmiennych
     podaj_zmienna l1_k;
-    double l1=l1_k.wpis();
+    double l1;
 
-    podaj_zmienna l2_k;
+    /*podaj_zmienna l2_k;
     double l2=l2_k.wpis();
     podaj_zmienna l3_k;
     double l3=l3_k.wpis();
@@ -123,7 +123,7 @@ int main()
 
     // obliczenia jakis szit
 
-
+*/
     //robienie okna
     sf::RenderWindow okno;
     okno.create(sf::VideoMode(800,600,30),"L");
@@ -131,7 +131,9 @@ int main()
     //okno g³ówne
     while(okno.isOpen())
     {
+        l1=l1_k.wpis(100,100,"Podaj L1");
         okno.clear();
+
 
     }
     return 0;
