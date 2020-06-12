@@ -2,7 +2,7 @@
 1591917172 source:c:\users\paulina\desktop\cpp\zbr\src\podaj_zmienna.cpp
 	"podaj_zmienna.h"
 
-1591974385 c:\users\paulina\desktop\cpp\zbr\include\podaj_zmienna.h
+1592005674 c:\users\paulina\desktop\cpp\zbr\include\podaj_zmienna.h
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/Network.hpp>
@@ -11,7 +11,7 @@
 	<SFML/Window.hpp>
 	<vector>
 
-1591918145 source:c:\users\paulina\desktop\cpp\zbr\main.cpp
+1592004239 source:c:\users\paulina\desktop\cpp\zbr\main.cpp
 	<iostream>
 	"podaj_zmienna.h"
 	<SFML/Graphics.hpp>

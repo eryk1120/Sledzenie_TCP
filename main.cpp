@@ -10,120 +10,96 @@ int main()
 {
 
     //Tworzenie zmiennych
-    podaj_zmienna l1_k;
-    double l1;
+    podaj_zmienna l1;
+    podaj_zmienna l2;
+    podaj_zmienna l3;
 
-    /*podaj_zmienna l2_k;
-    double l2=l2_k.wpis();
-    podaj_zmienna l3_k;
-    double l3=l3_k.wpis();
 
-    podaj_zmienna d_k;
-    double d=d_k.wpis();
-    podaj_zmienna e_k;
-    double e=e_k.wpis();
+    podaj_zmienna d;
+    podaj_zmienna e;
 
-    podaj_zmienna l4_k;
-    double l4=l4_k.wpis();
-    podaj_zmienna l5_k;
-    double l5=l5_k.wpis();
-    podaj_zmienna l6_k;
-    double l6=l6_k.wpis();
+    podaj_zmienna l4;
+    podaj_zmienna l5;
+    podaj_zmienna l6;
 
-    podaj_zmienna teta_k;
-    double teta=teta_k.wpis();
-    podaj_zmienna trojzab_k;
-    double trojzab=trojzab_k.wpis();
+    podaj_zmienna teta;
+    podaj_zmienna trojzab;
 
-    podaj_zmienna xp_k;
-    double xp=xp_k.wpis();
-    podaj_zmienna yp_k;
-    double yp=yp_k.wpis();
-    podaj_zmienna zp_k;
-    double zp=zp_k.wpis();
+    podaj_zmienna xp;
+    podaj_zmienna yp;
+    podaj_zmienna zp;
 
-    podaj_zmienna xkon_k;
-    double xkon=xkon_k.wpis();
-    podaj_zmienna ykon_k;
-    double ykon=ykon_k.wpis();
-    podaj_zmienna zkon_k;
-    double zkon=zkon_k.wpis();
+    podaj_zmienna xkon;
+    podaj_zmienna ykon;
+    podaj_zmienna zkon;
 
-    podaj_zmienna fi1_k;
-    double fi1=fi1_k.wpis();
-    podaj_zmienna fi2_k;
-    double fi2=fi2_k.wpis();
-    podaj_zmienna fi3_k;
-    double fi3=fi3_k.wpis();
-    podaj_zmienna fi4_k;
-    double fi4=fi4_k.wpis();
-    podaj_zmienna fi5_k;
-    double fi5=fi5_k.wpis();
+    podaj_zmienna fi1;
+    podaj_zmienna fi2;
+    podaj_zmienna fi3;
+    podaj_zmienna fi4;
+    podaj_zmienna fi5;
 
-    podaj_zmienna sigma1_k;
-    double sigma1=sigma1_k.wpis();
-    podaj_zmienna sigma2_k;
-    double sigma2=sigma2_k.wpis();
-    podaj_zmienna sigma5_k;
-    double sigma5=sigma5_k.wpis();
+    podaj_zmienna sigma1;
+    podaj_zmienna sigma2;
+    podaj_zmienna sigma5;
     // pokolei liczenie
-    xp=xkon-(l5+l6)*cos(teta*PI/180)*cos(trojzab*PI/180);
-    yp=ykon-(l5+l6)*cos(teta*PI/180)*sin(trojzab*PI/   180);
-    zp=zkon-(l4+l5)*sin(teta*PI/180);
+    xp.wynik=xkon.wynik-(l5.wynik+l6.wynik)*cos(teta.wynik*PI/180)*cos(trojzab.wynik*PI/180);
+    yp.wynik=ykon.wynik-(l5.wynik+l6.wynik)*cos(teta.wynik*PI/180)*sin(trojzab.wynik*PI/180);
+    zp.wynik=zkon.wynik-(l4.wynik+l5.wynik)*sin(teta.wynik*PI/180);
 
-    double S1=1/(xp*xp+yp*yp)*(e*xp+sigma1*yp*sqrt(xp*xp+yp*yp-e*e));
-    double C1=1/(xp*xp+yp*yp)*(-e*xp+sigma1*xp*sqrt(xp*xp+yp*yp-e*e));
-    double S5= cos(teta*PI/180)*(sin(trojzab*PI/180)*C1-cos(trojzab*PI/180)*S1);
-    double C5=sigma5*sqrt(1-S5*S5);
+    double S1=1/(xp.wynik*xp.wynik+yp.wynik*yp.wynik)*(e.wynik*xp.wynik+sigma1.wynik*yp.wynik*sqrt(xp.wynik*xp.wynik+yp.wynik*yp.wynik-e.wynik*e.wynik));
+    double C1=1/(xp.wynik*xp.wynik+yp.wynik*yp.wynik)*(-e.wynik*xp.wynik+sigma1.wynik*xp.wynik*sqrt(xp.wynik*xp.wynik+yp.wynik*yp.wynik-e.wynik*e.wynik));
+    double S5= cos(teta.wynik*PI/180)*(sin(trojzab.wynik*PI/180)*C1-cos(trojzab.wynik*PI/180)*S1);
+    double C5=sigma5.wynik*sqrt(1-S5*S5);
 
-    double S234=sin(teta*PI/180)/C5;
-    double C234=cos(teta*PI/180)/C5*(cos(trojzab*PI/180)*C1+sin(trojzab*PI/180)*S1);
-    double xr=xp-l4*C1*C234;
-    double yr=yp-l4*S1*C234;
-    double zr=zp-l4*S234;
+    double S234=sin(teta.wynik*PI/180)/C5;
+    double C234=cos(teta.wynik*PI/180)/C5*(cos(trojzab.wynik*PI/180)*C1+sin(trojzab.wynik*PI/180)*S1);
+    double xr=xp.wynik-l4.wynik*C1*C234;
+    double yr=yp.wynik-l4.wynik*S1*C234;
+    double zr=zp.wynik-l4.wynik*S234;
 
-    double a=-l1+sigma1*sqrt(xr*xr+yr*yr-e*e);
-    double b=1/(2*l2)*(a*a+zr*zr+l2*l2-l3*l3);
-    double S2=1/(a*a+zr*zr)*(zr*b-sigma2*a*sqrt(a*a+zr*zr-b*b));
-    double C2=1/(a*a+zr*zr)*(a*b-sigma2*zr*sqrt(a*a+zr*zr-b*b));
-    double S3=-sigma2/l3*sqrt(a*a+zr*zr-b*b);
-    double C3=(b-l2)/l3;
-    double S23=1/l3*(zr-l2*S2);
-    double C23=1/l3*(a-l2*C2);
+    double a=-l1.wynik+sigma1.wynik*sqrt(xr*xr+yr*yr-e.wynik*e.wynik);
+    double b=1/(2*l2.wynik)*(a*a+zr*zr+l2.wynik*l2.wynik-l3.wynik*l3.wynik);
+    double S2=1/(a*a+zr*zr)*(zr*b-sigma2.wynik*a*sqrt(a*a+zr*zr-b*b));
+    double C2=1/(a*a+zr*zr)*(a*b-sigma2.wynik*zr*sqrt(a*a+zr*zr-b*b));
+    double S3=-sigma2.wynik/l3.wynik*sqrt(a*a+zr*zr-b*b);
+    double C3=(b-l2.wynik)/l3.wynik;
+    double S23=1/l3.wynik*(zr-l2.wynik*S2);
+    double C23=1/l3.wynik*(a-l2.wynik*C2);
     double S4=S234*C23-C234*S23;
     double C4=C234*C23+S234*S23;
     //obliczenia sporawdzajace i pomocnicze
-    double x01=l1*C1;
-    double y01=l1*S1;
+    double x01=l1.wynik*C1;
+    double y01=l1.wynik*S1;
     double z01=0;
 
-    double x01prim=x01+d*S1;
-    double y01prim=y01-d*C1;
+    double x01prim=x01+d.wynik*S1;
+    double y01prim=y01-d.wynik*C1;
     double z01prim=0;
 
-    double x02prim=x01prim+l2*C2*C1;
-    double y02prim=y01prim+l2*S1*C2;
-    double z02prim=l2*S2;
+    double x02prim=x01prim+l2.wynik*C2*C1;
+    double y02prim=y01prim+l2.wynik*S1*C2;
+    double z02prim=l2.wynik*S2;
 
-    double x02=x02prim-(d-e)*S1;
-    double y02=y02prim+(d-e)*C1;
+    double x02=x02prim-(d.wynik-e.wynik)*S1;
+    double y02=y02prim+(d.wynik-e.wynik)*C1;
     double z02=z02prim;
 
-    xr=x02+l3*C1*C23;
-    yr=y02+l3*S1*C23;
-    zr=z02+l3*S23;
+    xr=x02+l3.wynik*C1*C23;
+    yr=y02+l3.wynik*S1*C23;
+    zr=z02+l3.wynik*S23;
 
-    xp=xr+l4*C1*C234;
-    yp=yr+l4*S1*C234;
-    zp=zr+l4*S234;
+    xp.wynik=xr+l4.wynik*C1*C234;
+    yp.wynik=yr+l4.wynik*S1*C234;
+    zp.wynik=zr+l4.wynik*S234;
 
-    xkon=xp+(l5+l6)*cos(teta*PI/180)*cos(trojzab*PI/180);
-    ykon=yp+(l5+l6)*cos(teta*PI/180)*sin(trojzab*PI/180);
-    zkon=zp+(l5+l6)*cos(teta*PI/180);
+    xkon.wynik=xp.wynik+(l5.wynik+l6.wynik)*cos(teta.wynik*PI/180)*cos(trojzab.wynik*PI/180);
+    ykon.wynik=yp.wynik+(l5.wynik+l6.wynik)*cos(teta.wynik*PI/180)*sin(trojzab.wynik*PI/180);
+    zkon.wynik=zp.wynik+(l5.wynik+l6.wynik)*cos(teta.wynik*PI/180);
 
     // obliczenia jakis szit
 
-*/
+
     //robienie okna
     sf::RenderWindow okno;
     okno.create(sf::VideoMode(800,600,30),"L");
@@ -131,9 +107,8 @@ int main()
     //okno g³ówne
     while(okno.isOpen())
     {
-        l1=l1_k.wpis(100,100,"Podaj L1");
         okno.clear();
-
+        xkon.wyswietl(100,100,"HI",okno);
 
     }
     return 0;
